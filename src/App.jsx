@@ -14,7 +14,25 @@ function App() {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    
+    try {
+      const response = await fetch("/api", {
+        method : 'POST',
+        body : JSON.stringify({
+          searchData : `${searchData}`
+        })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        setData(data);
+        setError(null);
+      } else {
+        setError(data.message);
+        setData([]);
+      }
+    } catch (error) {
+      setError(error.message);
+      setData([]);
+    }
   };
 
   if (error) {
@@ -36,7 +54,7 @@ function App() {
             required
           />
         </form>
-        {error && <div className={styles.error}>* {error}</div> }
+        {error && <div className={styles.error}>* {error}</div>}
         <Card />
       </div>
     </SearchProvider>
