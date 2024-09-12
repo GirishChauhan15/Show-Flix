@@ -12,9 +12,13 @@ exports.handler = async (event, context) => {
     }
     const data = await response.json();
 
+    const result = data.results;
+
+    const filteredMovies = result.filter((movie) => movie.poster_path !== null);
+
     return {
       statusCode: 200,
-      body: JSON.stringify(data.results),
+      body: JSON.stringify(filteredMovies),
     };
   } catch (error) {
     return {

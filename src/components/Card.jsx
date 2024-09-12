@@ -9,8 +9,6 @@ export default function Card() {
 
   const { data } = useData();
 
-  const filteredMovies = data.filter((movie) => movie.poster_path !== null);
-
   const handleClick = (e) => {
     if (e.target.parentNode.parentNode.className === styles.card) {
       setCardKey(e.target.parentNode.parentNode.id);
@@ -70,7 +68,7 @@ export default function Card() {
         ""
       )}
       <ul className={styles.container}>
-        {filteredMovies.map((movie) => (
+        {data.map((movie) => (
           <li className={styles.card} id={movie.id} key={movie.id}>
             <div onClick={handleClick}>
               <svg
