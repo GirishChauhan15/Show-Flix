@@ -1,1 +1,1 @@
-export { SearchProvider, useData } from './UserSearchData'
+export { MetaProvider, useMetaData } from './UserMetaData'

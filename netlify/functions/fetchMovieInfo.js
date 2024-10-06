@@ -1,13 +1,13 @@
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 exports.handler = async (event) => {
   const MOVIE_API = process.env.API_KEY;
-  const searchData = JSON.parse(event.body).searchData;
+  const movieName = JSON.parse(event.body).movieName;
 
-  await delay(1500);
+  await delay(1000);
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/search/multi?api_key=${MOVIE_API}&query=${searchData}`
+      `https://api.themoviedb.org/3/search/multi?api_key=${MOVIE_API}&query=${movieName}`
     );
 
     if (!response.ok) {

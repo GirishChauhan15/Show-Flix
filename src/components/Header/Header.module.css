@@ -1,0 +1,144 @@
+a {
+  text-decoration: none;
+}
+.wrap {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.container {
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu {
+  cursor: pointer;
+  width: 3rem;
+}
+
+.close {
+  cursor: pointer;
+  width: 1.5rem;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  transform: translateX(-50%);
+}
+
+.hide {
+  transform: translateX(650px);
+  position: absolute;
+}
+
+.nav {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  flex-direction: column;
+  align-items: center;
+  background-color: #12121280;
+  backdrop-filter: blur(13px);
+  width: 60%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translate(0);
+  transition: transform 0.6s ease-in-out;
+}
+.nav a {
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (max-width: 240px) or (max-height: 200px) {
+  .nav {
+    overflow: auto;
+  }
+  .nav a {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding: 0;
+  }
+  .close {
+    top: 2%;
+  }
+}
+
+.title {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(1px 2px 1px #2e2e2e);
+  font-size: 1.2rem;
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: #c080d6;
+  text-underline-offset: .3rem;
+}
+.nav a:hover {
+  color: rgb(182, 182, 182);
+  transition: color 0.5s ease-in-out;
+}
+
+@media (min-width: 600px) {
+  .container {
+    margin: 1rem 4rem;
+  }
+  .close {
+    width: 1.8rem;
+    top: 2%;
+  }
+
+  .hide {
+    transform: translateX(1000px);
+  }
+
+  .nav {
+    width: 70%;
+  }
+  .nav a {
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    margin: 1rem 6rem;
+    margin-top: 2rem;
+  }
+  .menu {
+    display: none;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .hide,
+  .nav {
+    all: unset;
+  }
+  .hide > a,
+  .nav > a {
+    font-size: 1.6rem;
+    margin-left: 2.5em;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .nav a:hover,
+  .hide a:hover {
+    color: rgb(182, 182, 182);
+    transition: color 0.5s ease-in-out;
+  }
+}

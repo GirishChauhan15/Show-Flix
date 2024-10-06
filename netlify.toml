@@ -9,6 +9,21 @@
     to = "/.netlify/functions/fetchData"
     status = 200
 
+  [[redirects]]
+  from = "/trend/day"
+  to = "/.netlify/functions/fetchTrendingDay"
+  status = 200
+
+  [[redirects]]
+  from = "/trend/week"
+  to = "/.netlify/functions/fetchTrendingWeek"
+  status = 200
+
+  [[redirects]]
+  from = "/movie"
+  to = "/.netlify/functions/fetchMovieInfo"
+  status = 200
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]

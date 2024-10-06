@@ -1,0 +1,120 @@
+a {
+  color: white;
+}
+.svg_arrow {
+  filter: drop-shadow(2px 2px 1px black);
+  position: absolute;
+  z-index: 999;
+  right: 5%;
+  top: 5%;
+  transform: translate(-50%, -50%);
+  transition: fill 0.2s ease-in-out;
+}
+.svg_arrow:hover {
+  fill: #c080d6;
+}
+.wrap {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.poster {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 0.6em;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  background-color: #2a2a2a;
+  border-radius: calc(1rem - 0.3rem);
+  padding: 0.3rem;
+  position: relative;
+  width: 80%;
+  margin: 1em auto;
+}
+.front {
+  position: relative;
+}
+.sub {
+  font-family: "Playfair Display", serif;
+  position: absolute;
+  z-index: 2;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+.blackFilter {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5),
+    rgb(0, 0, 0)
+  );
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6em;
+}
+
+.title {
+  margin-top: 0.5em;
+  font-size: 1.2rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 200px) {
+  .title {
+    font-size: 0.7rem;
+  }
+}
+
+.date {
+  margin-top: 0.5em;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .svg_arrow {
+    width: 1.5rem;
+  }
+  .title {
+    margin-top: 0.8em;
+    font-size: 1.4rem;
+  }
+  .date {
+    margin-top: 0.8em;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+  }
+  .svg_arrow {
+    width: 2rem;
+  }
+
+  .title {
+    margin-top: 1em;
+    font-size: 2rem;
+  }
+  .date {
+    margin-top: 1em;
+    font-size: 1.2rem;
+  }
+}

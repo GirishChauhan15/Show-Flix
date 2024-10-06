@@ -1,15 +1,13 @@
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-exports.handler = async (event) => {
+exports.handler = async () => {
   const MOVIE_API = process.env.API_KEY;
-  const searchData = JSON.parse(event.body).searchData;
 
   await delay(1500);
 
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/search/multi?api_key=${MOVIE_API}&query=${searchData}`
+      `https://api.themoviedb.org/3/trending/all/day?api_key=${MOVIE_API}&language=en-US`
     );
-
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
